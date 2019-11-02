@@ -17,6 +17,7 @@
     <color name="inline_action_like">@color/medium_red</color>
     <color name="inline_action_like_pressed">@color/medium_red_50</color>
     <color name="inline_action_pressed">@color/medium_gray_50</color>
+    <color name="black">#ffffff</color>
     <color name="inline_action_retweet">@color/medium_green</color>
     <color name="inline_action_retweet_pressed">@color/medium_gray_50</color>
 </resources>

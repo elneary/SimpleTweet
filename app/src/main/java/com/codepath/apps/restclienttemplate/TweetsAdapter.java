@@ -16,6 +16,8 @@ import com.codepath.apps.restclienttemplate.models.Tweet;
 
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder>{
 
     Context context;
@@ -108,7 +110,12 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvBody.setText(tweet.body);
             tvScreenName.setText(tweet.getFormattedHandle());
             tvName.setText(tweet.user.name);
-            Glide.with(context).load(tweet.user.profileImageUrl).into(ivProfileImage);
+            int radius = 30;
+            int margin = 10;
+            Glide.with(context)
+                    .load(tweet.user.profileImageUrl)
+                    .transform(new RoundedCornersTransformation(radius, margin))
+                    .into(ivProfileImage);
             timestamp.setText(tweet.getTimeDiff());
             publishedDate.setText(tweet.getFormattedTime());
             retweetVal.setText("" + tweet.numRetweets);
