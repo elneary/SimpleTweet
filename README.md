@@ -2,7 +2,7 @@
 
 Simple Twitter Client is an android app that allows a user to view his or her Twitter timeline. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
-Time spent: **X** hours spent in total
+Time spent: **10** hours spent in total
 
 ## User Stories
 
