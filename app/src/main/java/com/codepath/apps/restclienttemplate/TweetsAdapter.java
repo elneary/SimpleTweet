@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,17 +32,26 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_tweet, parent, false);
-        return new ViewHolder(view);
+
+        ViewHolder holder = new ViewHolder(view);
+
+        return holder;
+
+
     }
 
     //Bind values based on the position of the element
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         //Get the data at position
-        Tweet tweet = tweets.get(position);
+        final Tweet tweet = tweets.get(position);
+
+        holder.tweetContainer.setTag(position);
 
         //Bind the tweet with the viewholder param
         holder.bind(tweet);
+
+
 
     }
 
@@ -69,6 +79,11 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         ImageView ivProfileImage;
         TextView tvBody;
         TextView tvScreenName;
+        View extraDetails;
+        TextView tvName;
+        RelativeLayout tweetContainer;
+        TextView timestamp;
+        TextView publishedDate;
 
         public ViewHolder(@NonNull View itemView) {
             //itemview parameter represents one row in the recyclerview
@@ -77,14 +92,36 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
             tvBody = itemView.findViewById(R.id.tvBody);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
+            extraDetails = itemView.findViewById(R.id.extraDetails);
+            tweetContainer = itemView.findViewById(R.id.tweetContainer);
+            tvName = itemView.findViewById(R.id.tvName);
+            timestamp = itemView.findViewById(R.id.timestamp);
+            publishedDate = itemView.findViewById(R.id.formattedDate);
+
 
 
         }
 
-        public void bind(Tweet tweet){
+        public void bind(final Tweet tweet){
             tvBody.setText(tweet.body);
-            tvScreenName.setText(tweet.user.screenName);
+            tvScreenName.setText(tweet.getFormattedHandle());
+            tvName.setText(tweet.user.name);
             Glide.with(context).load(tweet.user.profileImageUrl).into(ivProfileImage);
+            timestamp.setText(tweet.getTimeDiff());
+            publishedDate.setText(tweet.getFormattedTime());
+
+            boolean expanded = tweet.isExpanded();
+
+            tweetContainer.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    boolean expanded = tweet.isExpanded();
+                    tweet.setExpanded(!expanded);
+                    notifyItemChanged((int) v.getTag());
+                }
+            });
+
+            extraDetails.setVisibility(expanded ? View.VISIBLE : View.GONE);
         }
     }
 

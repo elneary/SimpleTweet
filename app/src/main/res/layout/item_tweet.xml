@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:id="@+id/tweetContainer">
 
     <ImageView
         android:id="@+id/ivProfileImage"
@@ -14,7 +15,30 @@
         android:layout_margin="5dp"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_centerVertical="true"/>
+
+
+    <TextView
+        android:id="@+id/timestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="4dp"
+        tools:text="57m" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/ivProfileImage"
+        tools:text="Emma Neary" />
 
     <TextView
         android:id="@+id/tvScreenName"
@@ -22,8 +46,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="0dp"
-        android:layout_toEndOf="@+id/ivProfileImage"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/tvName"
         tools:text="elneary01" />
 
     <TextView
@@ -33,6 +57,42 @@
         android:layout_below="@+id/tvScreenName"
         android:layout_marginStart="5dp"
         android:layout_marginTop="2dp"
+        android:layout_marginEnd="5dp"
+        android:layout_toStartOf="@id/timestamp"
         android:layout_toEndOf="@+id/ivProfileImage"
-        tools:text="Tweet tweet tweeeeeet" />
+        android:autoLink="all"
+        android:linksClickable="true"
+        tools:text="Tweet tweet tweet twett wtet wetwe twe twe twe t wet w ett " />
+
+
+    <RelativeLayout
+        android:id="@+id/extraDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBody"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@+id/ivProfileImage">
+
+        <TextView
+            android:id="@+id/formattedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="extra extra"
+            android:layout_marginStart="5dp"
+            />
+
+        <TextView
+            android:id="@+id/retweets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_toEndOf="@+id/formattedDate"
+            tools:text="20 rt" />
+
+    </RelativeLayout>
+
+
+
 </RelativeLayout>
