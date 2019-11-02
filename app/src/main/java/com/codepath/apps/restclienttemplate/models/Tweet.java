@@ -15,6 +15,8 @@ public class Tweet {
     public User user;
     public long id;
     private boolean expanded;
+    public int numRetweets;
+    public boolean retweetedByUser;
 
     //Take json and turn into tweet object
     public static Tweet fromJson(JSONObject json) throws JSONException {
@@ -23,6 +25,8 @@ public class Tweet {
         tweet.createdAt =json.getString("created_at");
         tweet.id = json.getLong("id");
         tweet.user = User.fromJson(json.getJSONObject("user"));
+        tweet.numRetweets = json.getInt("retweet_count");
+        tweet.retweetedByUser = json.getBoolean("retweeted");
         return tweet;
     }
 

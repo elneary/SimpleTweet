@@ -38,7 +38,8 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="8dp"
         android:layout_toEndOf="@+id/ivProfileImage"
-        tools:text="Emma Neary" />
+        tools:text="Emma Neary"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/tvScreenName"
@@ -62,6 +63,7 @@
         android:layout_toEndOf="@+id/ivProfileImage"
         android:autoLink="all"
         android:linksClickable="true"
+        android:textColorLink="@color/twitter_blue"
         tools:text="Tweet tweet tweet twett wtet wetwe twe twe twe t wet w ett " />
 
 
@@ -81,15 +83,30 @@
             android:layout_height="wrap_content"
             tools:text="extra extra"
             android:layout_marginStart="5dp"
+            android:layout_margin="5dp"
             />
+
+        <ImageView
+            android:id="@+id/retweetSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            app:srcCompat="@drawable/ic_vector_retweet_stroke"
+            tools:text="extra extra"
+            android:layout_below="@id/formattedDate"/>
 
         <TextView
             android:id="@+id/retweets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
-            android:layout_toEndOf="@+id/formattedDate"
-            tools:text="20 rt" />
+            android:layout_toEndOf="@+id/retweetSymbol"
+            android:textSize="16sp"
+            tools:text="20"
+            android:layout_below="@id/formattedDate"/>
+
+
+
 
     </RelativeLayout>
 

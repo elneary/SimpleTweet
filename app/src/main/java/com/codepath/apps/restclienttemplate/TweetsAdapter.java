@@ -83,6 +83,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         TextView tvName;
         RelativeLayout tweetContainer;
         TextView timestamp;
+        TextView retweetVal;
         TextView publishedDate;
 
         public ViewHolder(@NonNull View itemView) {
@@ -97,6 +98,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvName = itemView.findViewById(R.id.tvName);
             timestamp = itemView.findViewById(R.id.timestamp);
             publishedDate = itemView.findViewById(R.id.formattedDate);
+            retweetVal = itemView.findViewById(R.id.retweets);
 
 
 
@@ -109,6 +111,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             Glide.with(context).load(tweet.user.profileImageUrl).into(ivProfileImage);
             timestamp.setText(tweet.getTimeDiff());
             publishedDate.setText(tweet.getFormattedTime());
+            retweetVal.setText("" + tweet.numRetweets);
 
             boolean expanded = tweet.isExpanded();
 
