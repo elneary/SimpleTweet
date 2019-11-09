@@ -71,12 +71,14 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
+**Part 2**
 
 <img src='https://github.com/elneary/SimpleTweet/blob/master/twitterp2.gif' title='Video Walkthrough Part 2' width='' alt='Video Walkthrough' />
-Part 2
+
+**Part 1**
 
 <img src='https://github.com/elneary/SimpleTweet/blob/master/twitterp1.gif' title='Video Walkthrough Part 1' width='' alt='Video Walkthrough' />
-Part 1
+
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
