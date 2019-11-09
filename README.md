@@ -8,7 +8,7 @@ Time spent: **13** hours spent in total
 
 The following **required** functionality is completed:
 
-*Part 2*
+**Part 2**
 - [x] User can **compose and post a new tweet**
   - [x] User can click a “Compose” icon in the Action Bar on the top right
   - [x] User can then enter a new tweet and post this to twitter
@@ -42,7 +42,7 @@ The following **bonus** features are implemented:
 
 
 
-*Part 1*
+**Part 1**
 - [x] User can **sign in to Twitter** using OAuth login
 - [x]	User can **view tweets from their home timeline**
   - [x] User is displayed the username, name, and body for each tweet
@@ -73,8 +73,10 @@ Here's a walkthrough of implemented user stories:
 
 
 <img src='https://github.com/elneary/SimpleTweet/blob/master/twitterp2.gif' title='Video Walkthrough Part 2' width='' alt='Video Walkthrough' />
+Part 2
 
 <img src='https://github.com/elneary/SimpleTweet/blob/master/twitterp1.gif' title='Video Walkthrough Part 1' width='' alt='Video Walkthrough' />
+Part 1
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
